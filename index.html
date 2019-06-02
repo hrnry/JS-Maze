@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Maze: Generator & Solver</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="maze"></div>
+
+    <form id="generator">
+      <p>Generate</p>
+      <ul>
+        <li>Select maze size</li>
+        <li>Select Generator</li>
+      </ul>
+      <select id="generatorSize" name="size">
+        <option value="T" selected>Tiny</option>
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+      </select>
+      <select id="generatorAlgo" name="algo">
+        <option value="c" selected>Clustering</option>
+        <option value="p">Perlin-Noize(Binarized)</option>
+        <option value="ps">Perlin-Noize[seamless tiling](Binarized)</option>
+      </select>
+    </form>
+
+    <form id="solver">
+      <p>Solve</p>
+      <ol>
+        <li>Select search(pathfinding) algorithm</li>
+        <li>Click START</li>
+        <li>Click GOAL</li>
+      </ol>
+      <select id="solverAlgo" name="algo">
+        <option value="dfs">Depth-First</option>
+        <option value="bfs">Breadth-First</option>
+        <option value="bfsm" selected>Best-First (Manhattan)</option>
+        <option value="bfse">Best-First (Euclidean)</option>
+        <option value="d">Dijkstra</option>
+      </select>
+    </form>
+  </div>
+
+  <p>TODOs:</p>
+  <ul>
+    <li>Allow "Dijkstra" to use "Cost Map" and/or "EdgeCost"</li>
+    <li>Implement "A-Star"</li>
+    <li>To enable the setting of the seeds</li>
+    <li>Draw canvas with WebGL</li>
+  </ul>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
